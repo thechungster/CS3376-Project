@@ -1,0 +1,2 @@
+bool enterLandingQueue();
+bool enterTakeoffQueue();
