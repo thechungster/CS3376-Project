@@ -12,17 +12,18 @@ class Runway{
 	}
 
 	//return if there is plane taking off
-	public bool isEmpty()	{
+	public:
+	 bool isEmpty()	{
 		return empty;
 	}
 
 	//plane has entered runway, starting takeoff
-	public void setNotEmpty()	{
+	 void setNotEmpty()	{
 		empty = false;
 	}
 
 	// plane has finished taking off
-	public void setEmpty()	{
+	 void setEmpty()	{
 		empty = true;
 	}
 
