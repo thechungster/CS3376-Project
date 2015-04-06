@@ -1,6 +1,5 @@
 #include "StatKeeper.h"
-
-using namespace std;
+#include "Airplane.h"
 
 	//getter method to how many planes have landed
 	

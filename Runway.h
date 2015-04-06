@@ -1,15 +1,14 @@
 #ifndef Runway
 #define Runway
 
-class Runway
-{
+class Runway{
 	bool empty;
 
-public:
-	Runway();
-	bool isEmpty();
-	void setNotEmpty();
-	void setEmpty();
+	public:
+		Runway();
+		bool isEmpty();
+		void setNotEmpty();
+		void setEmpty();
 
 };
 
