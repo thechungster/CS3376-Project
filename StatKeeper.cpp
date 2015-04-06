@@ -2,45 +2,38 @@
 
 using namespace std;
 
-class StatKeeper	{
-	private:
-	 int planesCrashed;
-	 int planesLanded;
-	 int totalLandingTime;
-	 int totalTakeoffTime;
-
 	//getter method to how many planes have landed
-	public:
-	 int getPlanesLanded()	{
+	
+	 int StatKeeper::getPlanesLanded()	{
 		return planesLanded;
 	}
 
 	//getter method to how many planes have crashed/
-	 int getPlanesCrashed()	{
+	 int StatKeeper::getPlanesCrashed()	{
 		return planesCrashed;
 	}
 
 	// increments 1 to the amount of planes that have landed
-	 void addPlanesLanded()	{
+	 void StatKeeper::addPlanesLanded()	{
 		planesCrashed++;
 		return;
 	}
 
 	// increments 1 to the amount of planes that have crashed
-	 void addPlanesCrashed()	{
+	 void StatKeeper::addPlanesCrashed()	{
 		planesLanded++;
 		return;
 	}
 
 	// add to the amount of time a plane has been in the air, wanting ot land
-	 void addTotalLandingTime(Airplane myPlane)	{
+	 void StatKeeper::addTotalLandingTime(Airplane myPlane)	{
 		return;
 	}
 
 	// add to the amount of time a plane has been on the runway, wanting to take off
-	 void addTotalTakeoffTime(Airplane myPlane)	{
+	 void StatKeeper::addTotalTakeoffTime(Airplane myPlane)	{
 		return;
 	}
 
-}
+
 

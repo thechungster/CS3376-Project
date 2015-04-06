@@ -1,9 +1,17 @@
 #ifndef Runway
 #define Runway
 
-Ruway();
-bool isEmpty();
-void setNotEmpty();
-void setEmpty();
+class Runway
+{
+	bool empty;
+
+public:
+	Runway();
+	bool isEmpty();
+	void setNotEmpty();
+	void setEmpty();
+
+};
+
 
 #endif
