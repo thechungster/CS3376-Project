@@ -1,25 +1,14 @@
 #include "Airplane.h"
-using namespace std;
 
-class Airplane {
+Airplane::Airplane(int x, int y) {
+	//initialize  variables
+}
 
-	private:
-	 int fuel;
-	 int timeQueued;
-
-	public:
-	 Airplane(int x, int y) {
-		//initialize variables
-	}
-
-	 int getTimeQueued() {
-		//returns time plane was added to queue
-		return timeQueued;
-	}
-
-	 int getFuel() {
-		//returns amount of fuel when plane was queued
-		return fuel;
-	}
-
+int Airplane::getTimeQueued() {
+	//returns time plane was added to queue
+	return timeQueued;
+}
+int Airplane::getFuel() {
+	//returns amount of fuel when plane was queued
+	return fuel;
 }

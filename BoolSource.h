@@ -1,5 +1,8 @@
 #ifndef BoolSource // guards
 #define BoolSource
-bool enterLandingQueue();
-bool enterTakeoffQueue();
+class BoolSource {
+	public:
+			bool enterLandingQueue();
+			bool enterTakeoffQueue();
+};
 #endif
