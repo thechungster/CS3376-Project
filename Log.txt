@@ -1,0 +1,9 @@
+4/4
+	Team meeting to design header and source files
+	Airplane is the airplane class which are the objects put in the queue. Keeps track of fuel and time queued.
+	airsim contains the main function.
+	BoolSource decides whether or not to add airplanes to the queues.
+	Runway is the runway class which will either have a plane on it or not.
+	Statkeeper keeps track of all stats related to the project.
+4/5
+	Wrote and tested Makefile and fixed some bugs in the source files.
