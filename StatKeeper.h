@@ -1,5 +1,5 @@
-#ifndef StatKeeper
-#define StatKeeper
+#ifndef STATKEEPER_H
+#define STATKEEPER_H
 
 class StatKeeper{
 

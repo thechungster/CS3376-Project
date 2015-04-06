@@ -1,5 +1,5 @@
-#ifndef Runway
-#define Runway
+#ifndef RUNWAY_H
+#define RUNWAY_H
 
 class Runway{
 	bool empty;

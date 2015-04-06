@@ -9,6 +9,6 @@ int Airplane::getTimeQueued() {
 	return 0;//timeQueued;
 }
 int Airplane::getFuel() {
-	//returns amount of fuel when plane was queued
+	//areturns amount of fuel when plane was queued
 	return 0;//fuel;
 }

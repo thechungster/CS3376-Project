@@ -1,5 +1,5 @@
-#ifndef BoolSource // guards
-#define BoolSource
+#ifndef BOOLSOURCE_H // guards
+#define BOOLSOURCE_H
 class BoolSource {
 	public:
 		bool enterLandingQueue();

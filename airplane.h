@@ -1,5 +1,5 @@
-#ifndef Airplane
-#define Airplane
+#ifndef AIRPLANE_H
+#define AIRPLANE_H
 class Airplane {
 	private:
 			int fuel;
