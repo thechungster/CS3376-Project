@@ -1,11 +1,12 @@
 #ifndef StatKeeper
 #define StatKeeper
- int planesCrashed;
- int planesLanded;
- int totalLandingTime;
- int totalTakeoffTime;
+
 class StatKeeper{
 
+	 int planesCrashed;
+	 int planesLanded;
+	 int totalLandingTime;
+	 int totalTakeoffTime;
 
  public:
 	int getPlanesLanded();
