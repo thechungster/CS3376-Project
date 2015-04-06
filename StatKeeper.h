@@ -1,5 +1,6 @@
 #ifndef STATKEEPER_H
 #define STATKEEPER_H
+#include "Airplane.h"
 
 class StatKeeper{
 
