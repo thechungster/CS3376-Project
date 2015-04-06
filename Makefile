@@ -2,7 +2,7 @@ CC = g++
 
 all : Airplane airsim BoolSource Runway StatKeeper
 
-Airplane : airplane.h Airplane.cpp
+Airplane : Airplane.h Airplane.cpp
 	$(CC) -c Airplane.cpp
 
 BoolSource : BoolSource.h BoolSource.cpp
@@ -16,7 +16,8 @@ StatKeeper : StatKeeper.h StatKeeper.cpp
 
 airsim : airsim.cpp
 	$(CC) -c airsim.cpp
+	$(CC) -o $@ airsim.cpp
 
 clean : 
-	rm Airplane airsim BoolSource Runway StatKeeper 
+	rm Airplane.o airsim.o airsim BoolSource.o Runway.o StatKeeper.o 
 
