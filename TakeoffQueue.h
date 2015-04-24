@@ -4,7 +4,7 @@
 
 
 struct node{
-	Airplane plane;
+	Airplane* plane;
 	
 	struct node *next;
 };
@@ -17,7 +17,7 @@ private:
 
 public:
 	TakeoffQueue();
-	void enqueue(Airplane plane);
+	void enqueue(Airplane* plane);
 	Airplane dequeue();
 	bool enterQueue();
 };

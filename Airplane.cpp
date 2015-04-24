@@ -1,9 +1,9 @@
 #include "Airplane.h"
 
-Airplane::Airplane(int fuel = 60) {
+Airplane::Airplane(int fuel, int timeQueued) {
 	//initialize  variables
 	this->fuel = fuel;
-	timeQueued = 0;
+	this->timeQueued = timeQueued;
 }
 
 int Airplane::getTimeQueued() {

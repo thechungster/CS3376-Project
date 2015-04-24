@@ -5,7 +5,7 @@ class Airplane {
 			int fuel;
 			int timeQueued;
 	public:
-			Airplane(int fuel);
+			Airplane(int fuel, int timeQueued);
 			int getTimeQueued();
 			int getFuel();
 };

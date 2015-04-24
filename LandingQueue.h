@@ -2,7 +2,7 @@
 #define LANDINGQUEUE_H
 #include "Airplane.h"
 struct node{
-	Airplane plane;
+	Airplane* plane;
 
 	struct node *next;
 };
@@ -15,7 +15,7 @@ private:
 
 public:
 	LandingQueue();
-	void enqueue(Airplane plane);
+	void enqueue(Airplane* plane);
 	Airplane dequeue();
 	bool enterQueue();
 };

@@ -8,7 +8,7 @@ LandingQueue::LandingQueue(){
 	start = NULL;
 }
 
-void LandingQueue::enqueue(Airplane plane){
+void LandingQueue::enqueue(Airplane* plane){
 	node *temp = new node;
 
 	temp->plane = plane;
