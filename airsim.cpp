@@ -51,7 +51,7 @@ int main(int argc, char **argv)	{
 		if (runway->isEmpty())	{
 			Airplane landingPlane = landQueue->dequeue; // dequeue a landing queue plane and check if crashed
 			if ((landingPlane.getTimeQueued + landingPlane.getFuel) <= currentMinute){ // if plane has not crashed
-
+				stats->addTotalLandingTime(currentMinute - landingPlane.getTimeQueued);
 			}
 			else{
 				stats->addPlanesCrashed;

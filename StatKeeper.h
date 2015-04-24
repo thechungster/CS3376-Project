@@ -3,7 +3,7 @@
 #include "Airplane.h"
 
 class StatKeeper{
-
+private:
 	 int planesCrashed;
 	 int planesLanded;
 	 int totalLandingTime;
@@ -14,7 +14,7 @@ class StatKeeper{
 	int getPlanesCrashed();
 	void addPlanesLanded();
 	void addPlanesCrashed();
-	void addTotalLandingTime(Airplane myPlane);
-	void addTotalTakeoffTime(Airplane myPlane);
+	void addTotalLandingTime(int time);
+	void addTotalTakeoffTime(int time);
 };
 #endif

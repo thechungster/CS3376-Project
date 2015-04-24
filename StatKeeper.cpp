@@ -25,13 +25,13 @@
 	}
 
 	// add to the amount of time a plane has been in the air, wanting ot land
-	 void StatKeeper::addTotalLandingTime(Airplane myPlane)	{
-		return;
+	 void StatKeeper::addTotalLandingTime(int time)	{
+		 totalLandingTime += time;
 	}
 
 	// add to the amount of time a plane has been on the runway, wanting to take off
-	 void StatKeeper::addTotalTakeoffTime(Airplane myPlane)	{
-		return;
+	 void StatKeeper::addTotalTakeoffTime(int time)	{
+		 totalTakeoffTime += time;
 	}
 
 

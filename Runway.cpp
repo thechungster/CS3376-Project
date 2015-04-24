@@ -2,6 +2,7 @@
 
 using namespace std;
 
+
 //constructor
 Runway::Runway(int land, int takeoff)	{
 	landTime = land;
@@ -16,13 +17,13 @@ Runway::Runway(int land, int takeoff)	{
 }
 
 //plane has entered runway, starting takeoff
- void Runway::setNotEmpty()	{
+ void Runway::startLanding(Airplane plane)	{
 	empty = false;
 }
 
 // plane has finished taking off
- void Runway::setEmpty()	{
-	empty = true;
+ void Runway::startTakeoff(Airplane plane)	{
+	empty = false;
 }
 
  void Runway::incrementMinute()	{
