@@ -5,6 +5,7 @@
 class Runway{
 private:
 	bool empty;
+	int emptyAt;
 	int landTime;
 	int takeoffTime;
 	int currentMinute;
@@ -12,8 +13,8 @@ private:
 	public:
 		Runway(int land, int takeoff);
 		bool isEmpty(); // returns true if there are no planes landing or taking off
-		void startLanding(Airplane Plane);
-		void startTakeoff(Airplane Plane);
+		void startLanding();
+		void startTakeoff();
 		void incrementMinute();
 
 };

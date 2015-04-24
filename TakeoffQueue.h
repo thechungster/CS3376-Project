@@ -3,11 +3,6 @@
 #include "Airplane.h"
 
 
-struct node{
-	Airplane* plane;
-	
-	struct node *next;
-};
 class TakeoffQueue {
 
 private:

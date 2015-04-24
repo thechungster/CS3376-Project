@@ -7,6 +7,7 @@ using namespace std;
 Runway::Runway(int land, int takeoff)	{
 	landTime = land;
 	takeoffTime = takeoff;
+	emptyAt = 0;
 	empty = true;
 	currentMinute = 0;
 }
@@ -17,17 +18,21 @@ Runway::Runway(int land, int takeoff)	{
 }
 
 //plane has entered runway, starting takeoff
- void Runway::startLanding(Airplane plane)	{
-	empty = false;
+ void Runway::startLanding()	{
+	 emptyAt = currentMinute += landTime;
 }
 
-// plane has finished taking off
- void Runway::startTakeoff(Airplane plane)	{
-	empty = false;
+// start a plane takeoff
+ void Runway::startTakeoff()	{
+	 emptyAt = currentMinute += takeoffTime;
 }
 
+ //increment current minute and check if runway should be empty
  void Runway::incrementMinute()	{
 	 currentMinute++;
+	 if (emptyAt == currentMinute)	{
+		 empty = true;
+	 }
  }
 
 
