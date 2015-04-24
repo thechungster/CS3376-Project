@@ -1,9 +1,18 @@
 #include "StatKeeper.h"
 #include "Airplane.h"
 
+
+	StatKeeper::StatKeeper()	{
+		planesLanded = 0;
+		planesTakenoff = 0;
+		planesCrashed = 0;
+		totalLandingTime = 0;
+		totalTakeoffTime = 0;
+	}
+
 	//getter method to how many planes have landed
 	
-	 int StatKeeper::getPlanesLanded()	{
+	 double StatKeeper::getPlanesLanded()	{
 		return planesLanded;
 	}
 
@@ -11,6 +20,18 @@
 	 int StatKeeper::getPlanesCrashed()	{
 		return planesCrashed;
 	}
+
+	 double StatKeeper::getPlanesTakenoff()	{
+		 return planesTakenoff;
+	 }
+
+	 double StatKeeper::getTakeoffTimeTotal()	{
+		 return totalTakeoffTime;
+	 }
+
+	 double StatKeeper::getLandingTimeTotal()	{
+		 return totalLandingTime;
+	 }
 
 	// increments 1 to the amount of planes that have landed
 	 void StatKeeper::addPlanesLanded()	{
@@ -33,6 +54,10 @@
 	 void StatKeeper::addTotalTakeoffTime(int time)	{
 		 totalTakeoffTime += time;
 	}
+
+	 void StatKeeper::addPlanesTakenoff()	{
+		 planesTakenoff++;
+	 }
 
 
 

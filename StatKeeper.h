@@ -5,13 +5,19 @@
 class StatKeeper{
 private:
 	 int planesCrashed;
-	 int planesLanded;
-	 int totalLandingTime;
-	 int totalTakeoffTime;
+	 double planesLanded;
+	 double planesTakenoff;
+	 double totalLandingTime;
+	 double totalTakeoffTime;
 
  public:
-	int getPlanesLanded();
+	 StatKeeper();
+	double getPlanesLanded();
 	int getPlanesCrashed();
+	double getPlanesTakenoff();
+	double getTakeoffTimeTotal();
+	double getLandingTimeTotal();
+	void addPlanesTakenoff();
 	void addPlanesLanded();
 	void addPlanesCrashed();
 	void addTotalLandingTime(int time);

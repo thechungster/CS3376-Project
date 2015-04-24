@@ -3,12 +3,12 @@
 #include "Airplane.h"
 
 class Runway{
-private:
-	bool empty;
-	int emptyAt;
-	int landTime;
-	int takeoffTime;
-	int currentMinute;
+	private:
+		bool empty;
+		int emptyAt;
+		int landTime;
+		int takeoffTime;
+		int currentMinute;
 
 	public:
 		Runway(int land, int takeoff);

@@ -17,7 +17,7 @@ Runway::Runway(int land, int takeoff)	{
 	return empty;
 }
 
-//plane has entered runway, starting takeoff
+//plane has entered runway, starting landing
  void Runway::startLanding()	{
 	 emptyAt = currentMinute += landTime;
 }
