@@ -1,11 +1,20 @@
+#include <stdlib.h>
+#include <time.h>       /* time */
 #include "BoolSource.h"
 
-bool BoolSource::enterLandingQueue() {
-	//implement code to return a boolean whether or not a p;ane should enter the queue
-	return false;
+BoolSource::BoolSource(double prob)	{
+	queueProb = prob;
 }
 
-bool BoolSource::enterTakeoffQueue() {
-	//implement code to return a boolean whether or not a p;ane should enter the queue
+
+// determines whether or not a plane will enter the landing queue given the probability
+bool BoolSource::enterQueue() {
+	srand(time(NULL));
+	double random = (double(rand() % 101) / 100); // Get a double between 0 and 1
+
+	if (queueProb <= random)	{
+		return true;
+	}
+
 	return false;
 }

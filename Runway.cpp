@@ -5,10 +5,10 @@ using namespace std;
 //constructor
 Runway::Runway()	{
 	empty = true;
+	currentMinute = 0;
 }
 
 //return if there is plane taking off
-
  bool Runway::isEmpty()	{
 	return empty;
 }
@@ -22,5 +22,9 @@ Runway::Runway()	{
  void Runway::setEmpty()	{
 	empty = true;
 }
+
+ void Runway::incrementMinute()	{
+	 currentMinute++;
+ }
 
 
