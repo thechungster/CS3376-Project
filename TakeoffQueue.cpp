@@ -1,6 +1,7 @@
 #include "TakeoffQueue.h"
-#include "Airplane.h"
 #include <stddef.h> // to define null
+
+class Airplane;
 
 TakeoffQueue::TakeoffQueue(){
 	end = NULL;

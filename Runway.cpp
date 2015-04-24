@@ -3,7 +3,9 @@
 using namespace std;
 
 //constructor
-Runway::Runway()	{
+Runway::Runway(int land, int takeoff)	{
+	landTime = land;
+	takeoffTime = takeoff;
 	empty = true;
 	currentMinute = 0;
 }

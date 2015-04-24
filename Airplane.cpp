@@ -1,14 +1,16 @@
 #include "Airplane.h"
 
-Airplane::Airplane(int x, int y) {
+Airplane::Airplane(int fuel = 60) {
 	//initialize  variables
+	this->fuel = fuel;
+	timeQueued = 0;
 }
 
 int Airplane::getTimeQueued() {
 	//returns time plane was added to queue
-	return 0;//timeQueued;
+	return timeQueued;//timeQueued;
 }
 int Airplane::getFuel() {
 	//areturns amount of fuel when plane was queued
-	return 0;//fuel;
+	return fuel;//fuel;
 }

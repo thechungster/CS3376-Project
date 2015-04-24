@@ -1,6 +1,8 @@
 #ifndef TAKEOFFQUEUE_H // guards
 #define TAKEOFFQUEUE_H
 #include "Airplane.h"
+
+
 struct node{
 	Airplane plane;
 	
