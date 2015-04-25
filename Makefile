@@ -1,6 +1,6 @@
 CC = g++
 
-all : Airplane airsim BoolSource Runway StatKeeper
+all : Airplane airsim BoolSource Runway StatKeeper LandingQueue TakeoffQueue
 
 Airplane : Airplane.h Airplane.cpp
 	$(CC) -c Airplane.cpp
@@ -13,6 +13,12 @@ Runway : Runway.h Runway.cpp
 
 StatKeeper : StatKeeper.h StatKeeper.cpp
 	$(CC) -c StatKeeper.cpp
+
+LandingQueue : LandingQueue.h LandingQueue.cpp
+	$(CC) -c LandingQueue.cpp
+
+TakeoffQueue : TakeoffQueue.h TakeoffQueue.cpp
+	$(CC) -c TakeoffQueue.cpp
 
 airsim : airsim.cpp
 	$(CC) -c airsim.cpp
