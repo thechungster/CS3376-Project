@@ -32,11 +32,12 @@ int main(int argc, char **argv)	{
 	int startTime = (int)argv[4];
 	int endTime = (int)argv[5];
 	int crashTime = (int)argv[6];
+	int currentMinute;
 	srand(time(NULL));
 	double randomFuel;
 
 	//create forloop and run program
-	for (int currentMinute = startTime; currentMinute > endTime; --currentMinute)	{
+	for (currentMinute = startTime; currentMinute > endTime; --currentMinute)	{
 		foundLanding = false;
 		if (landingBool->enterQueue())	{// check if plane should enter the landing queue
 			randomFuel = ((rand() % 30) + 30); // get random number between 30 and 60
@@ -52,7 +53,7 @@ int main(int argc, char **argv)	{
 
 		//check if runway is empty
 		if (runway->isEmpty())	{
-			stats->addPlanesCrashed();
+			
 			while (!landQueue->isEmpty() || !foundLanding)	{ // there are things in landing queue and nothing is landing
 				Airplane landingPlane = landQueue->dequeue(); // dequeue a landing queue plane and check if crashed NEED TO CHANGE THIS
 				if ((landingPlane.getTimeQueued() + landingPlane.getFuel()) <= currentMinute){ // if plane has not crashed
@@ -60,6 +61,9 @@ int main(int argc, char **argv)	{
 					stats->addPlanesLanded(); // tell statkeeper plane has landed
 					foundLanding = true; // to quit while loop
 				}// end if
+				else{
+					stats->addPlanesCrashed();
+				}// end else
 			}// end while
 
 			//check if landqueue is empty, takeoffqueue is empty and if plane is landing then add a takeoff queue
@@ -74,6 +78,13 @@ int main(int argc, char **argv)	{
 		runway->incrementMinute();
 	}//end for
 
+	// check for crashed planes
+	while (!landQueue->isEmpty())	{//while there are still planes in queue
+		Airplane nextPlane = landQueue->dequeue();
+		if ((nextPlane.getTimeQueued() + nextPlane.getFuel()) > currentMinute) {// if plane has crashed
+			stats->addPlanesCrashed;
+		}
+	}
 	//check for crashed planes and then print output
 	endingTime = clock();
 
