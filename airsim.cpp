@@ -54,9 +54,9 @@ int main(int argc, char **argv)	{
 		//check if runway is empty
 		if (runway->isEmpty())	{
 			
-			while (!landQueue->isEmpty() || !foundLanding)	{ // there are things in landing queue and nothing is landing
-				Airplane landingPlane = landQueue->dequeue(); // dequeue a landing queue plane and check if crashed NEED TO CHANGE THIS
-				if ((landingPlane.getTimeQueued() + landingPlane.getFuel()) <= currentMinute){ // if plane has not crashed
+			while (!landQueue->isEmpty() && !foundLanding)	{ // there are things in landing queue and nothing is landing
+				Airplane landingPlane = landQueue->dequeue(); // dequeue a landing queue plane and check if crashed 
+				if ((landingPlane.getTimeQueued() - landingPlane.getFuel()) < currentMinute){ // if plane has not crashed
 					stats->addTotalLandingTime((currentMinute - landingPlane.getTimeQueued())); // tell stat keeper how long its been in queue
 					stats->addPlanesLanded(); // tell statkeeper plane has landed
 					foundLanding = true; // to quit while loop
@@ -81,7 +81,7 @@ int main(int argc, char **argv)	{
 	// check for crashed planes
 	while (!landQueue->isEmpty())	{//while there are still planes in queue
 		Airplane nextPlane = landQueue->dequeue();
-		if ((nextPlane.getTimeQueued() + nextPlane.getFuel()) > currentMinute) {// if plane has crashed
+		if ((nextPlane.getTimeQueued() - nextPlane.getFuel()) < currentMinute) {// if plane has crashed
 			stats->addPlanesCrashed;
 		}
 	}
