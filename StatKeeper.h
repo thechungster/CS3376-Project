@@ -11,7 +11,7 @@ private:
 	 double totalTakeoffTime;
 
  public:
-	 StatKeeper();
+	StatKeeper();
 	double getPlanesLanded();
 	int getPlanesCrashed();
 	double getPlanesTakenoff();

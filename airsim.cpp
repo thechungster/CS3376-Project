@@ -55,9 +55,9 @@ int main(int argc, char **argv)	{
 		if (runway->isEmpty())	{
 			
 			while (!landQueue->isEmpty() && !foundLanding)	{ // there are things in landing queue and nothing is landing
-				Airplane landingPlane = landQueue->dequeue(); // dequeue a landing queue plane and check if crashed 
-				if ((landingPlane.getTimeQueued() - landingPlane.getFuel()) < currentMinute){ // if plane has not crashed
-					stats->addTotalLandingTime((currentMinute - landingPlane.getTimeQueued())); // tell stat keeper how long its been in queue
+				Airplane* landingPlane = landQueue->dequeue(); // dequeue a landing queue plane and check if crashed 
+				if ((landingPlane->getTimeQueued() - landingPlane->getFuel()) < currentMinute){ // if plane has not crashed
+					stats->addTotalLandingTime((currentMinute - landingPlane->getTimeQueued())); // tell stat keeper how long its been in queue
 					stats->addPlanesLanded(); // tell statkeeper plane has landed
 					foundLanding = true; // to quit while loop
 				}// end if
@@ -68,9 +68,9 @@ int main(int argc, char **argv)	{
 
 			//check if landqueue is empty, takeoffqueue is empty and if plane is landing then add a takeoff queue
 			if (landQueue->isEmpty() && !foundLanding && !takeoffQueue->isEmpty())	{
-				Airplane takeoffPlane = takeoffQueue->dequeue(); // get next takeoff plane in queue
-				stats->addTotalTakeoffTime(currentMinute - takeoffPlane.getTimeQueued()); // tell statkeeper how long its been in queue
-				stats->addPlanesTakenoff;
+				Airplane* takeoffPlane = takeoffQueue->dequeue(); // get next takeoff plane in queue
+				stats->addTotalTakeoffTime(currentMinute - takeoffPlane->getTimeQueued()); // tell statkeeper how long its been in queue
+				stats->addPlanesTakenoff();
 			}
 		}// end if
 
@@ -80,9 +80,9 @@ int main(int argc, char **argv)	{
 
 	// check for crashed planes
 	while (!landQueue->isEmpty())	{//while there are still planes in queue
-		Airplane nextPlane = landQueue->dequeue();
-		if ((nextPlane.getTimeQueued() - nextPlane.getFuel()) < currentMinute) {// if plane has crashed
-			stats->addPlanesCrashed;
+		Airplane* nextPlane = landQueue->dequeue();
+		if ((nextPlane->getTimeQueued() - nextPlane->getFuel()) < currentMinute) {// if plane has crashed
+			stats->addPlanesCrashed();
 		}
 	}
 	//check for crashed planes and then print output

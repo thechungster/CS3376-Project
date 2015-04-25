@@ -27,11 +27,11 @@ void LandingQueue::enqueue(Airplane* plane){
 
 }
 
-Airplane LandingQueue::dequeue()	{
+Airplane* LandingQueue::dequeue()	{
 	node *temp = new node;
 
 	if (start == NULL)	{
-		return temp->plane;///this is wrong
+		return NULL;///this is wrong
 	}
 
 	else{
@@ -40,5 +40,13 @@ Airplane LandingQueue::dequeue()	{
 
 		return temp->plane;
 	}
+}
 
+bool LandingQueue::isEmpty() {
+	if (start == NULL) {
+		return false;
+	}
+	else {
+		return true;
+	}
 }

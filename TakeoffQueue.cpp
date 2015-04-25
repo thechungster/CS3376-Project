@@ -27,7 +27,7 @@ void TakeoffQueue::enqueue(Airplane* plane){
 
 }
 
-Airplane TakeoffQueue::dequeue()	{
+Airplane* TakeoffQueue::dequeue()	{
 	node *temp = new node;
 
 	if (start == NULL)	{
@@ -41,4 +41,13 @@ Airplane TakeoffQueue::dequeue()	{
 		return temp->plane;
 	}
 
+}
+
+bool TakeoffQueue::isEmpty() {
+	if (start == NULL) {
+		return false;
+	}
+	else {
+		return true;
+	}
 }

@@ -16,7 +16,8 @@ private:
 public:
 	LandingQueue();
 	void enqueue(Airplane* plane);
-	Airplane dequeue();
+	Airplane* dequeue();
 	bool enterQueue();
+	bool isEmpty();
 };
 #endif
