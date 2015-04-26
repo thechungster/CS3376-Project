@@ -6,32 +6,33 @@
 #include "LandingQueue.h"
 #include "TakeoffQueue.h"
 #include <time.h>
+#include <cstdlib>
 
 using namespace std;
 
 int main(int argc, char **argv)	{
 	clock_t beginTime, endingTime; // instantiate clocks that keep track of program run time;
 	beginTime = clock();
-	if (argc != 7)	{ // if there are not 7 arguments, exit
+	if (argc != 8)	{ // if there are not 7 arguments, exit
 		cout << "wrong number of arguments, exiting now" << endl;
 		exit(1);
 	}
 
-	else if (atof(argv[2]) > 1 || atof(argv[3]) > 1)	{ // make sure probability is in percentage
+	else if (atof(argv[3]) > 1 || atof(argv[4]) > 1)	{ // make sure probability is in percentage
 		cout << "probability should be between 0 and 1" << endl;
 		exit(1);
 	}
 	//instantiate all the variables/objects needed
-	Runway* runway = new Runway((int)argv[0], (int)argv[1]);
+	Runway* runway = new Runway((int)argv[1], (int)argv[2]);
 	LandingQueue* landQueue = new LandingQueue();
 	TakeoffQueue* takeoffQueue = new TakeoffQueue();
-	BoolSource* landingBool = new BoolSource(atof(argv[2]));
-	BoolSource* takeoffBool = new BoolSource(atof(argv[3]));
+	BoolSource* landingBool = new BoolSource(atof(argv[3]));
+	BoolSource* takeoffBool = new BoolSource(atof(argv[4]));
 	StatKeeper* stats = new StatKeeper();
 	bool foundLanding = false;
-	int startTime = (int)argv[4];
-	int endTime = (int)argv[5];
-	int crashTime = (int)argv[6];
+	int startTime = (int)argv[5];
+	int endTime = (int)argv[6];
+	int crashTime = (int)argv[7];
 	int currentMinute;
 	srand(time(NULL));
 	double randomFuel;
@@ -40,13 +41,13 @@ int main(int argc, char **argv)	{
 	for (currentMinute = startTime; currentMinute > endTime; --currentMinute)	{
 		foundLanding = false;
 		if (landingBool->enterQueue())	{// check if plane should enter the landing queue
-			randomFuel = ((rand() % 30) + 30); // get random number between 30 and 60
+			randomFuel = (rand() % crashTime); // get random number between 0 and crashtime
 			Airplane* newPlane = new Airplane(randomFuel, currentMinute);
 			landQueue->enqueue(newPlane);
 		}// end if
 
 		if (takeoffBool->enterQueue())	{// check if plane should enter takeoff queue
-			randomFuel = ((rand() % 30) + 30); // get random number between 30 and 60
+			randomFuel = (rand() % crashTime); // get random number between 0 and crashTime
 			Airplane* newPlane = new Airplane(randomFuel, currentMinute);
 			takeoffQueue->enqueue(newPlane);
 		}// end if
