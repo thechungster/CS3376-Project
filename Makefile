@@ -1,29 +1,29 @@
+OBJS = Airplane.o airsim.o BoolSource.o LandingQueue.o Runway.o StatKeeper.o TakeoffQueue.o
 CC = g++
 
-all : Airplane airsim BoolSource Runway StatKeeper LandingQueue TakeoffQueue
+all: $(OBJS)
+	$(CC) -o Simulation $(OBJS)
 
-Airplane : Airplane.h Airplane.cpp
+Airplane.o: Airplane.cpp Airplane.h
 	$(CC) -c Airplane.cpp
 
-BoolSource : BoolSource.h BoolSource.cpp
+airsim.o: airsim.cpp Airplane.h BoolSource.h Runway.h StatKeeper.h LandingQueue.h TakeoffQueue.h
+	$(CC) -c airsim.cpp
+
+BoolSource.o: BoolSource.cpp BoolSource.h
 	$(CC) -c BoolSource.cpp
 
-Runway : Runway.h Runway.cpp
-	$(CC) -c Runway.cpp
-
-StatKeeper : StatKeeper.h StatKeeper.cpp
-	$(CC) -c StatKeeper.cpp
-
-LandingQueue : LandingQueue.h LandingQueue.cpp
+LandingQueue.o: LandingQueue.cpp LandingQueue.h Airplane.h
 	$(CC) -c LandingQueue.cpp
 
-TakeoffQueue : TakeoffQueue.h TakeoffQueue.cpp
+Runway.o: Runway.cpp Runway.h Airplane.h
+	$(CC) -c Runway.cpp
+
+StatKeeper.o: StatKeeper.cpp Airplane.h
+	$(CC) -c StatKeeper.cpp
+
+TakeoffQueue.o: TakeoffQueue.cpp Airplane.h LandingQueue.h
 	$(CC) -c TakeoffQueue.cpp
-
-airsim : airsim.cpp
-	$(CC) -c airsim.cpp
-	$(CC) -o $@ airsim.cpp
-
-clean : 
-	rm Airplane.o airsim.o airsim BoolSource.o Runway.o StatKeeper.o 
-
+	
+clean:
+	rm -f $(OBJS)

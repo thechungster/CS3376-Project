@@ -41,7 +41,6 @@ int main(int argc, char **argv)	{
 		foundLanding = false;
 		if (landingBool->enterQueue())	{// check if plane should enter the landing queue
 			randomFuel = (rand() % (crashTime - (crashTime / 2))) + crashTime / 2; //get number between crashtime/2 and crashtime
-			cout << randomFuel << endl;
 			Airplane* newPlane = new Airplane(randomFuel, currentMinute);
 			landQueue->enqueue(newPlane);
 		}// end if
@@ -89,14 +88,10 @@ int main(int argc, char **argv)	{
 		}
 	}
 	//check for crashed planes and then print output
-	endingTime = clock();
-	
-	float diff = (endingTime - beginTime) * CLOCKS_PER_SEC;
-
 	cout << "The total simulation time was " << startTime - endTime << " minutes" << endl;
-	cout << "There were " << stats->getPlanesTakenoff() <<  " that took off" << endl;
-	cout << "There were " << stats->getPlanesLanded() << " that landed" << endl;
-	cout << "There were " << stats->getPlanesCrashed() << " that crashed" << endl;
+	cout << "A total of " << stats->getPlanesTakenoff() <<  " planes took off" << endl;
+	cout << "A total of " << stats->getPlanesLanded() << " planes landed" << endl;
+	cout << "A total of " << stats->getPlanesCrashed() << " planes crashed" << endl;
 	if (stats->getPlanesTakenoff() < 1)	{
 		cout << "Since there were no planes that took off, there is no average time for a plane in the takeoff queue" << endl;
 	}
@@ -105,6 +100,5 @@ int main(int argc, char **argv)	{
 	}
 	
 	cout << "The planes waited in the landing queue for an average of " << -(stats->getLandingTimeTotal() / stats->getPlanesLanded()) << " minutes" << endl;
-	cin >> diff;
-	
+	return 0;
 }
