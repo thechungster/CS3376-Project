@@ -40,13 +40,14 @@ int main(int argc, char **argv)	{
 	for (currentMinute = startTime; currentMinute > endTime; --currentMinute)	{
 		foundLanding = false;
 		if (landingBool->enterQueue())	{// check if plane should enter the landing queue
-			randomFuel = ((rand() % crashTime)); // get random number between 30 and 60
+			randomFuel = (rand() % (crashTime - (crashTime / 2))) + crashTime / 2; //get number between crashtime/2 and crashtime
+			cout << randomFuel << endl;
 			Airplane* newPlane = new Airplane(randomFuel, currentMinute);
 			landQueue->enqueue(newPlane);
 		}// end if
 
 		if (takeoffBool->enterQueue())	{// check if plane should enter takeoff queue
-			randomFuel = ((rand() % crashTime)); // get random number between 30 and 60
+			randomFuel = (rand() % (crashTime - (crashTime / 2))) + crashTime / 2; //get number between crashtime/2 and crashtime
 			Airplane* newPlane = new Airplane(randomFuel, currentMinute);
 			takeoffQueue->enqueue(newPlane);
 		}// end if

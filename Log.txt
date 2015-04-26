@@ -1,9 +1,38 @@
-4/4
+4/4 - Group Meeting
 	Team meeting to design header and source files
 	Airplane is the airplane class which are the objects put in the queue. Keeps track of fuel and time queued.
 	airsim contains the main function.
 	BoolSource decides whether or not to add airplanes to the queues.
 	Runway is the runway class which will either have a plane on it or not.
 	Statkeeper keeps track of all stats related to the project.
-4/5
-	Wrote and tested Makefile and fixed some bugs in the source files.
+4/5 - Individual Work
+	Tested Makefile and fixed some bugs in the source files.
+
+4/20 - Group Meeting
+	 Added additional functions to various classes
+	 Added queue classes for takeoff and landing
+	 Split up additional work among team members and set due date for individual parts for 4/24
+
+4/23 - Individual Work
+	Plan: Finish BoolSource.cpp, and Runway.cpp
+	Time: 6:00PM - 9:00 PM 
+	Progress: Finished BoolSource.cpp, had troubles implementing runway.cpp had to add landingqueue and takeoffqueue because we did not realize those were separate classes.
+	Stopped: Stopped to eat
+
+4/24 - Individual Work
+	Plan: Finish Runway.cpp, TakeoffQueue and LandingQueue, start on airsim.cpp
+	Time: 5:00PM - 10:00PM
+	Progress: Finished Runway, Takeoffqueue and landing queue, finished for loop for airsim.cpp
+	Stopped: Stopped to sleep
+
+4/25 - Individual Work
+	Plan: Finish airsim.cpp
+	Time: 2:00PM - 3:00PM & 7:00PM - 10:00 PM
+	Progress: Fixed a lot of bugs in airsim.cpp, runway.cpp, takeoffqueue, landingqueue had trouble with rand() getting same numbers
+	Stopped: Stopped to eat and then stopped to sleep
+
+4:26 - Individual Work
+	Plan: Finish airsim.cpp, makefile, and memo
+	Time:10:00AM - 12:00PM & 8:00PM - 10:00PM
+	Progress: Finished airsim.cpp, finished editing makefile, and finished memo
+	Stopped: first stopped because had an event then stopped because finished.
