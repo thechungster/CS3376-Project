@@ -1,7 +1,5 @@
 #include "Runway.h"
 
-using namespace std;
-
 
 //constructor
 Runway::Runway(int land, int takeoff)	{
@@ -19,17 +17,19 @@ Runway::Runway(int land, int takeoff)	{
 
 //plane has entered runway, starting landing
  void Runway::startLanding()	{
-	 emptyAt = currentMinute += landTime;
+	 emptyAt = currentMinute + landTime;
+	 empty = false;
 }
 
 // start a plane takeoff
  void Runway::startTakeoff()	{
-	 emptyAt = currentMinute += takeoffTime;
+	 emptyAt = currentMinute + takeoffTime;
+	 empty = false;
 }
 
  //increment current minute and check if runway should be empty
  void Runway::incrementMinute()	{
-	 currentMinute++;
+	 ++currentMinute;
 	 if (emptyAt == currentMinute)	{
 		 empty = true;
 	 }

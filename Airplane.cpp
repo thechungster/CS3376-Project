@@ -5,15 +5,16 @@ Airplane::Airplane()	{
 	timeQueued = 0;
 }
 
-Airplane::Airplane(int fuel, int timeQueued) {
+Airplane::Airplane(int fue, int timeQueue) {
 	//initialize  variables
-	this->fuel = fuel;
-	this->timeQueued = timeQueued;
+	this->fuel = fue;
+	this-> timeQueued= timeQueue;
+	//	this->timeQueued = timeQueued;
 }
 
 int Airplane::getTimeQueued() {
 	//returns time plane was added to queue
-	return timeQueued;//timeQueued;
+	return this->timeQueued;//timeQueued;
 }
 int Airplane::getFuel() {
 	//areturns amount of fuel when plane was queued

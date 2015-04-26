@@ -44,9 +44,9 @@ Airplane* LandingQueue::dequeue()	{
 
 bool LandingQueue::isEmpty() {
 	if (start == NULL) {
-		return false;
+		return true;
 	}
 	else {
-		return true;
+		return false;
 	}
 }
