@@ -1,3 +1,5 @@
+Group Members:  Maisha Mehrin, Richard Ho, Tim Cheung
+
 4/4 - Group Meeting
 	Team meeting to design header and source files
 	Airplane is the airplane class which are the objects put in the queue. Keeps track of fuel and time queued.
