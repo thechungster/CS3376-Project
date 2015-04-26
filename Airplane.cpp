@@ -1,15 +1,14 @@
 #include "Airplane.h"
-
 Airplane::Airplane()	{
 	fuel = 0;
 	timeQueued = 0;
 }
 
-Airplane::Airplane(int fue, int timeQueue) {
+Airplane::Airplane(int fuel, int timeQueued) {
 	//initialize  variables
-	this->fuel = fue;
-	this-> timeQueued= timeQueue;
-	//	this->timeQueued = timeQueued;
+	this->fuel = fuel;
+	this-> timeQueued= timeQueued;
+	
 }
 
 int Airplane::getTimeQueued() {
