@@ -12,7 +12,7 @@ BoolSource::BoolSource(double prob)	{
 bool BoolSource::enterQueue() {
 	double random = (double(rand() % 101) / 100); // Get a double between 0 and 1
 	if (queueProb <= random)	{
-		return true;
+		return false;
 	}
-	return false;
+	return true;
 }
