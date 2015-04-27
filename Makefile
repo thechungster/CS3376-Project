@@ -2,7 +2,7 @@ OBJS = Airplane.o airsim.o BoolSource.o LandingQueue.o Runway.o StatKeeper.o Tak
 CC = g++
 
 all: $(OBJS)
-	$(CC) -o Simulation $(OBJS)
+	$(CC) -o airsim $(OBJS)
 
 Airplane.o: Airplane.cpp Airplane.h
 	$(CC) -c Airplane.cpp
@@ -26,4 +26,4 @@ TakeoffQueue.o: TakeoffQueue.cpp Airplane.h LandingQueue.h
 	$(CC) -c TakeoffQueue.cpp
 	
 clean:
-	rm -f $(OBJS)
+	rm -f $(OBJS) airsim
