@@ -8,6 +8,7 @@
 #include <time.h>
 #include <cstdlib>
 #include <stdio.h>
+#include <iomanip>
 
 using namespace std;
 
@@ -95,17 +96,24 @@ int main(int argc, char **argv)	{
 	if (stats->getPlanesTakenoff() < 1)	{
 		cout << "Since there were no planes that took off, there is no average time for a plane in the takeoff queue" << endl;
 	}
+	else if(stats->getTakeoffTimeTotal() == 0){
+		cout << setprecision(3) <<  "The planes waited in the takeoff queue for an average of " << (stats->getTakeoffTimeTotal() / stats->getPlanesTakenoff()) << " minutes (the 1 plane started to take off right away)" << endl;
+	}
 	else{
-		cout << "The planes waited in the takeoff queue for an average of " << (stats->getTakeoffTimeTotal() / stats->getPlanesTakenoff()) << " minutes" << endl;
+		cout << setprecision(3) << "The planes waited in the takeoff queue for an average of " << (stats->getTakeoffTimeTotal() / stats->getPlanesTakenoff()) << " minutes" << endl;
 	}
 	
 	if (stats->getPlanesLanded() < 1)	{
 		cout << "Since there were no planes that landed, there is no average time for a plane in the landing queue" << endl;
 	}
+	else if (stats->getLandingTimeTotal() == 0)	{
+		cout << setprecision(3) << "The planes waited in the landing queue for an average of " << (stats->getLandingTimeTotal() / stats->getPlanesLanded()) << " minutes (the 1 plane started to land right away)" << endl;
+	}
 	else{
-		cout << "The planes waited in the landing queue for an average of " << (stats->getLandingTimeTotal() / stats->getPlanesLanded()) << " minutes" << endl;
+		cout << setprecision(3) << "The planes waited in the landing queue for an average of " << (stats->getLandingTimeTotal() / stats->getPlanesLanded()) << " minutes" << endl;
 	}
 
+	cin >> crashTime;
 
 	return 0;
 }
