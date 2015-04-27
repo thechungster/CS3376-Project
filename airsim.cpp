@@ -99,7 +99,13 @@ int main(int argc, char **argv)	{
 		cout << "The planes waited in the takeoff queue for an average of " << (stats->getTakeoffTimeTotal() / stats->getPlanesTakenoff()) << " minutes" << endl;
 	}
 	
-	cout << "The planes waited in the landing queue for an average of " << (stats->getLandingTimeTotal() / stats->getPlanesLanded()) << " minutes" << endl;
+	if (stats->getPlanesLanded() < 1)	{
+		cout << "Since there were no planes that landed, there is no average time for a plane in the landing queue" << endl;
+	}
+	else{
+		cout << "The planes waited in the landing queue for an average of " << (stats->getLandingTimeTotal() / stats->getPlanesLanded()) << " minutes" << endl;
+	}
+
 
 	return 0;
 }
