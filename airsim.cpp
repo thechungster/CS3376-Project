@@ -57,7 +57,7 @@ int main(int argc, char **argv)	{
 
 				Airplane* landingPlane = landQueue->dequeue(); // dequeue a landing queue plane and check if crashed 
 				if ((landingPlane->getTimeQueued() - landingPlane->getFuel()) < currentMinute){ // if plane has not crashed
-					stats->addTotalLandingTime((currentMinute - landingPlane->getTimeQueued())); // tell stat keeper how long its been in queue
+					stats->addTotalLandingTime(landingPlane->getTimeQueued() - currentMinute); // tell stat keeper how long its been in queue
 					stats->addPlanesLanded(); // tell statkeeper plane has landed
 					runway->startLanding();
 					foundLanding = true; // to quit while loop
@@ -70,7 +70,7 @@ int main(int argc, char **argv)	{
 			//check if landqueue is empty, takeoffqueue is empty and if plane is landing then add a takeoff queue
 			if (landQueue->isEmpty() && !foundLanding && !takeoffQueue->isEmpty())	{
 				Airplane* takeoffPlane = takeoffQueue->dequeue(); // get next takeoff plane in queue
-				stats->addTotalTakeoffTime(currentMinute - takeoffPlane->getTimeQueued()); // tell statkeeper how long its been in queue
+				stats->addTotalTakeoffTime(takeoffPlane->getTimeQueued() - currentMinute); // tell statkeeper how long its been in queue
 				stats->addPlanesTakenoff();
 				runway->startTakeoff();
 			}
@@ -96,9 +96,10 @@ int main(int argc, char **argv)	{
 		cout << "Since there were no planes that took off, there is no average time for a plane in the takeoff queue" << endl;
 	}
 	else{
-		cout << "The planes waited in the takeoff queue for an average of " << -(stats->getTakeoffTimeTotal() / stats->getPlanesTakenoff()) << " minutes" << endl;
+		cout << "The planes waited in the takeoff queue for an average of " << (stats->getTakeoffTimeTotal() / stats->getPlanesTakenoff()) << " minutes" << endl;
 	}
 	
-	cout << "The planes waited in the landing queue for an average of " << -(stats->getLandingTimeTotal() / stats->getPlanesLanded()) << " minutes" << endl;
+	cout << "The planes waited in the landing queue for an average of " << (stats->getLandingTimeTotal() / stats->getPlanesLanded()) << " minutes" << endl;
+
 	return 0;
 }
