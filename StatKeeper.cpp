@@ -35,13 +35,13 @@
 
 	// increments 1 to the amount of planes that have landed
 	 void StatKeeper::addPlanesLanded()	{
-		planesCrashed++;
+		planesLanded++;
 		return;
 	}
 
 	// increments 1 to the amount of planes that have crashed
 	 void StatKeeper::addPlanesCrashed()	{
-		planesLanded++;
+		planesCrashed++;
 		return;
 	}
 

@@ -113,7 +113,6 @@ int main(int argc, char **argv)	{
 		cout << setprecision(3) << "The planes waited in the landing queue for an average of " << (stats->getLandingTimeTotal() / stats->getPlanesLanded()) << " minutes" << endl;
 	}
 
-	cin >> crashTime;
 
 	return 0;
 }
