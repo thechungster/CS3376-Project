@@ -1,7 +1,6 @@
-./airsim 5 7 .5 .4 360 0 20
-./airsim 3 3 .5 .5 720 0 30
-./airsim 4 8 .3 .3 360 0 20
-./airsim 4 3 .25 .25 720 0 30
-./airsim 3 4 .10 .10 360 0 60
-./airsim 2 2 .05 .05 360 0 60
-./airsim 2 2 .50 .05 360 0 120
+./Simulation 5 7 .5 .4 360 0 20
+./Simulation 5 7 .3 .3 360 0 20
+./Simulation 5 7 .10 .10 360 0 20
+./Simulation 5 7 .05 .05 360 0 20
+./Simulation 5 7 .50 .05 360 0 20
+./Simulation 5 7 .05 .50 360 0 20
